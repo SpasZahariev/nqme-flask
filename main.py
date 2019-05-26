@@ -4,6 +4,7 @@ from routes.Router import Router
 from utils.Response import Response
 from utils.TokenModerator import TokenModerator
 from utils.Middleware import MiddlewareUtils
+import os
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -430,5 +431,8 @@ def get_auth_token():
 
 # start the application
 if __name__ == '__main__':
-    app.run()
+    # Bind to PORT if defined, otherwise default to 5000.
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+    # app.run()
     # app.run(host='127.0.0.1', port=8080, debug=True)
