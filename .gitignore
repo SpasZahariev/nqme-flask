@@ -46,7 +46,7 @@ jspm_packages
 .serverless
 
 # Custom
-config.py
+
 #virtualenv
 /apienv
 /venv
