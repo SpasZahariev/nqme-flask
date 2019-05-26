@@ -35,8 +35,8 @@ class RoomModerator:
         youtube_key = TokenModerator.get_youtube_search_key()
 
         room_obj = {
-            '_id': DBUtils.generateUniqueId(Purpose.ROOM),
-            # '_id': DBUtils.generateFourSymbolId(),
+            # '_id': DBUtils.generateUniqueId(Purpose.ROOM),
+            '_id': DBUtils.generateFourSymbolId(),
             'master': {userId: token},
             'SpotifySearchToken': spotify_search_token,
             'YoutubeSearchToken': youtube_key,
