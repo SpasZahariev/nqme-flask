@@ -1,0 +1,48 @@
+{
+    "rooms": {
+        "_id": { // _id is primary key
+            "queue": {
+                "song_url_id": {
+                    "name": "Song name",
+                    "score": 10,
+                    "user":{
+                        "nickname":"",
+                        "userId":""
+                    }
+                }
+            }, 
+            "history": {
+                "played_song_url_id": {
+                    "name": "This song has been dequeued, played and added",
+                    "score": 15 // not really useful
+                }
+            },
+            "master": {"userId":"token"},
+            "head": {
+                "song_url_id": {
+                    "score": 10, 
+                    "name": "Song name"
+                }
+            },
+            "searchToken": "Token",
+            "accessToken": "Token",
+            "users": {
+                "first_user_id": {
+                    "nickname":"bla",
+                    "token":"token",
+                    "IP":"bla",
+                    "songs":["song_url_one"]
+                }
+            },
+            "blocked_members":{
+                "userId":{
+                    "nickname":"",
+                    "IP":""
+                }
+            }
+        }, 
+        "room_two_id": {
+
+        }
+    }
+}
