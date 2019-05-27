@@ -5,6 +5,7 @@ from utils.Response import Response
 from utils.TokenModerator import TokenModerator
 from utils.Middleware import MiddlewareUtils
 import os
+from flask import send_from_directory
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -28,6 +29,11 @@ This is a reST style.
 """
 
 '''
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               './favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route('/', methods=['GET'])
 def home():
