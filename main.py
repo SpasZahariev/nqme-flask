@@ -5,7 +5,6 @@ from utils.Response import Response
 from utils.TokenModerator import TokenModerator
 from utils.Middleware import MiddlewareUtils
 import os
-import logging
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -47,7 +46,6 @@ def create_room():
     Look at router.create_room for more detail\n
     :returns: response message, either success or failure which holds a room object
     """
-    logging.warning('create room called')
     result, room, message = Router.create_room()
     if result:
         return Response.responseSuccess({'room': room})

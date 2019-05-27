@@ -3,7 +3,6 @@ from utils.Response import Response
 from utils.DatabaseUtilities import DBUtils
 from utils.DatabaseUtilities import Purpose
 from utils.Security import SecurityUtils
-import logging
 
 '''
 This set of functions deals with:
@@ -54,11 +53,9 @@ class RoomModerator:
             },
             'blocked_members':{}
         }
-        logging.warning("room object created... no problem with making ID")
         #@think is it ok to return values as head, users, master, _id as those are not needed
 
         result = DBUtils.create_room(room_obj)
-        logging.warning("successfuly called DBUtils.create_room with provided room object")
 
         # cookie to identify the master
         room_obj.update({'MasterCookie': cookie})
